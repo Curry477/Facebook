@@ -1,0 +1,23 @@
+// Función para validar el formulario antes de enviarlo
+function validateForm() {
+    // Obtener los valores de los campos de correo electrónico y contraseña
+    const email = document.getElementById('email').value;
+    const password = document.getElementById('password').value;
+
+    // Verificar que ambos campos no estén vacíos
+    if (email === "" || password === "") {
+        alert("Por favor, completa todos los campos.");
+        return false; // Evita el envío del formulario si algún campo está vacío
+    }
+
+    // Mostrar mensaje de confirmación
+    const confirmLogin = confirm("¿Estás seguro de que deseas iniciar sesión?");
+    
+    // Si el usuario cancela la confirmación, no se envía el formulario
+    if (!confirmLogin) {
+        return false;
+    }
+
+    // Si todo está bien, el formulario se enviará
+    return true;
+}
